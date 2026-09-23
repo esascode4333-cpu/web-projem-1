@@ -1,1 +1,0 @@
-alert("Harika! HTML, CSS ve JavaScript başarıyla birbirine bağlandı.");
