@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Etkinlik Ekle</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Ana Sayfa</a> 
+            <a href="etkinlik-detay.html">Detay</a> 
+            <a href="etkinlik-ekle.html">Ekle</a>
+            <a href="etkinlik-guncelle.html">Güncelle</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Etkinlik Ekle</h1>
+        
+        <form action="#" method="POST">
+            <div>
+                <label for="etkinlikAdi">Etkinlik Adı</label><br>
+                <input type="text" id="etkinlikAdi" name="etkinlikAdi" required>
+            </div>
+            <br>
+            <div>
+                <label for="kategori">Kategori</label><br>
+                <select id="kategori" name="kategori" required>
+                    <option value="">Seçiniz...</option>
+                    <option value="seminer">Seminer</option>
+                    <option value="atolye">Atölye</option>
+                    <option value="konferans">Konferans</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label for="tarihSaat">Tarih / Saat</label><br>
+                <input type="datetime-local" id="tarihSaat" name="tarihSaat" required>
+            </div>
+            <br>
+            <div>
+                <label for="yer">Yer</label><br>
+                <input type="text" id="yer" name="yer" required>
+            </div>
+            <br>
+            <div>
+                <label for="aciklama">Açıklama</label><br>
+                <textarea id="aciklama" name="aciklama" rows="4" cols="30" required></textarea>
+            </div>
+            <br>
+            <button type="submit">Kaydet</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>Selim Aydın - 2311012055 - 2026</p>
+    </footer>
+</body>
+</html>

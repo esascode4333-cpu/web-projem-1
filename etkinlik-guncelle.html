@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Etkinlik Güncelle</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Ana Sayfa</a> 
+            <a href="etkinlik-detay.html">Detay</a> 
+            <a href="etkinlik-ekle.html">Ekle</a>
+            <a href="etkinlik-guncelle.html">Güncelle</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Etkinlik Güncelle</h1>
+        
+        <form action="#" method="POST">
+            <div>
+                <label for="guncelAdi">Etkinlik Adı</label><br>
+                <!-- value niteliği ile alan dolu geliyor -->
+                <input type="text" id="guncelAdi" name="guncelAdi" value="Kariyer Günleri 2026" required>
+            </div>
+            <br>
+            <div>
+                <label for="guncelKategori">Kategori</label><br>
+                <select id="guncelKategori" name="guncelKategori" required>
+                    <!-- selected niteliği ile seminer seçili geliyor -->
+                    <option value="seminer" selected>Seminer</option>
+                    <option value="atolye">Atölye</option>
+                    <option value="konferans">Konferans</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label for="guncelTarih">Tarih / Saat</label><br>
+                <input type="datetime-local" id="guncelTarih" name="guncelTarih" value="2026-10-12T14:00" required>
+            </div>
+            <br>
+            <div>
+                <label for="guncelYer">Yer</label><br>
+                <input type="text" id="guncelYer" name="guncelYer" value="A Blok Konferans Salonu" required>
+            </div>
+            <br>
+            <div>
+                <label for="guncelAciklama">Açıklama</label><br>
+                <!-- textarea içine yazılanlar dolu gelmesini sağlar -->
+                <textarea id="guncelAciklama" name="guncelAciklama" rows="4" cols="30" required>Üniversitemiz öğrencilerini sektörün öncü firmalarıyla buluşturacak olan Kariyer Günleri, bu yıl A Blok Konferans Salonu'nda gerçekleştirilecektir.</textarea>
+            </div>
+            <br>
+            <button type="submit">Güncelle</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>Selim Aydın - 2311012055 - 2026</p>
+    </footer>
+</body>
+</html>
