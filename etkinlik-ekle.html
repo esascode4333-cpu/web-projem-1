@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Etkinlik Ekle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/2311012055.css">
 </head>
 <body>
     <header>
@@ -18,37 +20,25 @@
         <h1>Etkinlik Ekle</h1>
         
         <form action="#" method="POST">
-            <div>
-                <label for="etkinlikAdi">Etkinlik Adı</label><br>
-                <input type="text" id="etkinlikAdi" name="etkinlikAdi" required>
-            </div>
-            <br>
-            <div>
-                <label for="kategori">Kategori</label><br>
-                <select id="kategori" name="kategori" required>
-                    <option value="">Seçiniz...</option>
-                    <option value="seminer">Seminer</option>
-                    <option value="atolye">Atölye</option>
-                    <option value="konferans">Konferans</option>
-                </select>
-            </div>
-            <br>
-            <div>
-                <label for="tarihSaat">Tarih / Saat</label><br>
-                <input type="datetime-local" id="tarihSaat" name="tarihSaat" required>
-            </div>
-            <br>
-            <div>
-                <label for="yer">Yer</label><br>
-                <input type="text" id="yer" name="yer" required>
-            </div>
-            <br>
-            <div>
-                <label for="aciklama">Açıklama</label><br>
-                <textarea id="aciklama" name="aciklama" rows="4" cols="30" required></textarea>
-            </div>
-            <br>
-            <button type="submit">Kaydet</button>
+    <label for="etkinlikAdi">Etkinlik adı</label>
+    <input type="text" id="etkinlikAdi" name="etkinlikAdi" required>
+
+    <label for="kategori">Kategori</label>
+    <select id="kategori" name="kategori" required>
+        <option value="">Seçiniz</option>
+        <option value="seminer">Seminer</option>
+        <option value="atolye">Atölye</option>
+        <option value="soylesi">Söyleşi</option>
+    </select>
+
+    <label for="tarih">Tarih</label>
+    <input type="date" id="tarih" name="tarih" required>
+
+    <label for="aciklama">Açıklama</label>
+    <textarea id="aciklama" name="aciklama" rows="4" required></textarea>
+
+    <button type="submit">Kaydet</button>
+
         </form>
     </main>
 
