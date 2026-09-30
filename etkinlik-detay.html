@@ -2,50 +2,82 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Etkinlik Detayı</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/2311012055.css">
+    <title>Etkinlik Detayları</title>
+    <!-- CSS Bağlantısı (Mobil ve Tasarım Özelliklerini Buradan Alır) -->
+    <link rel="stylesheet" href="css/2311012055.css">
 </head>
 <body>
+
     <header>
+        <h1>Kampüs Etkinlikleri</h1>
         <nav>
-            <a href="index.html">Ana Sayfa</a> 
-            <a href="etkinlik-detay.html">Detay</a> 
-            <a href="etkinlik-ekle.html">Ekle</a>
-            <a href="etkinlik-guncelle.html">Güncelle</a>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="etkinlikler.html">Etkinlikler</a></li>
+                <li><a href="etkinlik-ekle.html">Ekle</a></li>
+                <li><a href="etkinlik-guncelle.html">Güncelle</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
-       <section class="detay-grid">
-    <!-- SOL KART: Afiş -->
-    <article>
-        <img src="atolye.jpg" alt="Etkinlik Afişi">
-    </article>
-    
-    <!-- SAĞ KART: Etkinlik Künyesi -->
-    <article>
-        <dl>
-            <dt><strong>Tarih</strong></dt>
-            <dd>12 Ekim, 14:00</dd>
-            
-            <dt><strong>Yer</strong></dt>
-            <dd>A Blok Salon</dd>
-            
-            <dt><strong>Kategori</strong></dt>
-            <dd>Seminer</dd>
-            
-            <dt><strong>Kontenjan</strong></dt>
-            <dd>120</dd>
-        </dl>
-        <p>Mezunlarla kariyer söyleşileri ve şirket standları.</p>
-        <a href="index.html">← Ana Sayfaya dön</a>
-    </article>
-</section>
+        
+        <!-- 1. ETKİNLİK: Kariyer Günleri -->
+        <article style="margin-bottom: 2rem;">
+            <h2>Kariyer Günleri 2026</h2>
+            <!-- detay-grid sınıfı mobilde 1, bilgisayarda 2 sütun yapar -->
+            <section class="detay-grid">
+                <!-- Sol Taraf: Afiş -->
+                <div>
+                    <img src="afis.jpg" alt="Kariyer Günleri Afişi">
+                    <p><em>Şekil 1: Kariyer Günleri etkinlik afişi</em></p>
+                </div>
+                
+                <!-- Sağ Taraf: Künye -->
+                <div>
+                    <p><strong>Tarih:</strong> 12 Ekim, 14:00</p>
+                    <p><strong>Yer:</strong> A Blok Salon</p>
+                    <p><strong>Kategori:</strong> Seminer</p>
+                    <p><strong>Kontenjan:</strong> 120</p>
+                    <br>
+                    <p>Mezunlarla kariyer söyleşileri ve şirket standlarının yer alacağı geniş çaplı kariyer buluşması.</p>
+                    <br>
+                    <a href="etkinlikler.html">← Listeye dön</a>
+                </div>
+            </section>
+        </article>
+
+        <!-- 2. ETKİNLİK: Robotik Atölyesi -->
+        <article>
+            <h2>Robotik Atölyesi</h2>
+            <!-- detay-grid sınıfı mobilde 1, bilgisayarda 2 sütun yapar -->
+            <section class="detay-grid">
+                <!-- Sol Taraf: Afiş -->
+                <div>
+                    <img src="atolye.jpg" alt="Robotik Atölyesi Afişi">
+                    <p><em>Şekil 2: Robotik Atölyesi etkinlik afişi</em></p>
+                </div>
+                
+                <!-- Sağ Taraf: Künye -->
+                <div>
+                    <p><strong>Tarih:</strong> 20 Ekim, 14:00</p>
+                    <p><strong>Yer:</strong> Lab 2</p>
+                    <p><strong>Kategori:</strong> Atölye</p>
+                    <p><strong>Kontenjan:</strong> 30</p>
+                    <br>
+                    <p>Uygulamalı temel robotik eğitimi ve sensörlerle proje geliştirme atölyesi.</p>
+                    <br>
+                    <a href="etkinlikler.html">← Listeye dön</a>
+                </div>
+            </section>
+        </article>
+
     </main>
 
     <footer>
         <p>Selim Aydın - 2311012055 - 2026</p>
     </footer>
+
 </body>
 </html>
