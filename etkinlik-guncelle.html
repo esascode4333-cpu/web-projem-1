@@ -2,45 +2,69 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Etkinlik Güncelle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/2311012055.css">
+    <title>Etkinlik Güncelle</title>
+    <link rel="stylesheet" href="css/2311012055.css">
+    <script type="module" src="js/event-form.js"></script>
 </head>
 <body>
     <header>
+        <h1>Etkinlik Güncelle</h1>
         <nav>
-            <a href="index.html">Ana Sayfa</a> 
-            <a href="etkinlik-detay.html">Detay</a> 
-            <a href="etkinlik-ekle.html">Ekle</a>
-            <a href="etkinlik-guncelle.html">Güncelle</a>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="etkinlikler.html">Etkinlikler</a></li>
+                <li><a href="etkinlik-ekle.html">Ekle</a></li>
+            </ul>
         </nav>
     </header>
-
     <main>
-        <h1>Etkinlik Güncelle</h1>
-        <form action="#" method="POST">
-    <label for="etkinlikAdi">Etkinlik adı</label>
-    <input type="text" id="etkinlikAdi" name="etkinlikAdi" value="Kariyer Günleri 2026" required>
-
-    <label for="kategori">Kategori</label>
-    <select id="kategori" name="kategori" required>
-        <option value="">Seçiniz</option>
-        <option value="seminer" selected>Seminer</option>
-        <option value="atolye">Atölye</option>
-        <option value="soylesi">Söyleşi</option>
-    </select>
-
-    <label for="tarih">Tarih</label>
-    <input type="date" id="tarih" name="tarih" value="2026-10-12" required>
-
-    <label for="aciklama">Açıklama</label>
-    <textarea id="aciklama" name="aciklama" rows="4" required>Mezunlarla kariyer söyleşileri</textarea>
-
-    <button type="submit">Güncelle</button>
-</form>
+        <p style="margin-bottom: 2rem; color: #555;">Alanlar mevcut etkinliğin bilgileriyle dolu gelir. Bu sprintte form veri güncellemez.</p>
         
+        <form id="etkinlik-formu" data-mode="guncelle" novalidate style="max-width: 600px; display:flex; flex-direction:column; gap:1.5rem;">
+            <div>
+                <label style="font-weight:bold; display:block; margin-bottom:0.5rem;">Etkinlik Adı *</label>
+                <input type="text" name="ad" style="width:100%; padding:0.75rem; border:1px solid #ccc; border-radius:4px;">
+                <span id="ad-hata" style="color:red; font-size: 0.85rem; display:block; margin-top:0.25rem;"></span>
+            </div>
+            <div>
+                <label style="font-weight:bold; display:block; margin-bottom:0.5rem;">Kategori *</label>
+                <select name="kategori" style="width:100%; padding:0.75rem; border:1px solid #ccc; border-radius:4px;">
+                    <option value="">Seçiniz</option>
+                    <option value="Seminer">Seminer</option>
+                    <option value="Atölye">Atölye</option>
+                    <option value="Söyleşi">Söyleşi</option>
+                </select>
+                <span id="kategori-hata" style="color:red; font-size: 0.85rem; display:block; margin-top:0.25rem;"></span>
+            </div>
+            <div>
+                <label style="font-weight:bold; display:block; margin-bottom:0.5rem;">Tarih *</label>
+                <input type="date" name="tarih" style="width:100%; padding:0.75rem; border:1px solid #ccc; border-radius:4px;">
+                <span id="tarih-hata" style="color:red; font-size: 0.85rem; display:block; margin-top:0.25rem;"></span>
+            </div>
+            <div>
+                <label style="font-weight:bold; display:block; margin-bottom:0.5rem;">Saat *</label>
+                <input type="time" name="saat" style="width:100%; padding:0.75rem; border:1px solid #ccc; border-radius:4px;">
+                <span id="saat-hata" style="color:red; font-size: 0.85rem; display:block; margin-top:0.25rem;"></span>
+            </div>
+            <div>
+                <label style="font-weight:bold; display:block; margin-bottom:0.5rem;">Yer *</label>
+                <input type="text" name="yer" style="width:100%; padding:0.75rem; border:1px solid #ccc; border-radius:4px;">
+                <span id="yer-hata" style="color:red; font-size: 0.85rem; display:block; margin-top:0.25rem;"></span>
+            </div>
+            <div>
+                <label style="font-weight:bold; display:block; margin-bottom:0.5rem;">Kontenjan</label>
+                <input type="number" name="kontenjan" min="1" max="1000" style="width:100%; padding:0.75rem; border:1px solid #ccc; border-radius:4px;">
+                <span id="kontenjan-hata" style="color:red; font-size: 0.85rem; display:block; margin-top:0.25rem;"></span>
+            </div>
+            <div>
+                <label style="font-weight:bold; display:block; margin-bottom:0.5rem;">Açıklama</label>
+                <textarea name="aciklama" rows="4" style="width:100%; padding:0.75rem; border:1px solid #ccc; border-radius:4px;"></textarea>
+            </div>
+            <button type="submit" style="background:var(--renk-ana); color:white; padding:1rem; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Güncelle</button>
+        </form>
+        <div id="form-mesaj" style="margin-top: 1.5rem; max-width: 600px;"></div>
     </main>
-
     <footer>
         <p>Selim Aydın - 2311012055 - 2026</p>
     </footer>

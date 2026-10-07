@@ -4,49 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kampüs Etkinlikleri</title>
-    <!-- CSS bağlantımız burada -->
     <link rel="stylesheet" href="css/2311012055.css">
+    <script type="module" src="js/event-list.js"></script>
 </head>
 <body>
-
     <header>
         <h1>Kampüs Etkinlikleri</h1>
+        <p style="color:white; margin:0 0 1rem 0;">Fakültedeki seminer, atölye ve söyleşileri tek yerden takip edin.</p>
         <nav>
             <ul>
                 <li><a href="index.html">Ana Sayfa</a></li>
                 <li><a href="etkinlikler.html">Etkinlikler</a></li>
                 <li><a href="etkinlik-ekle.html">Ekle</a></li>
-                <li><a href="etkinlik-guncelle.html">Güncelle</a></li>
             </ul>
         </nav>
     </header>
-
     <main>
-        <p>Fakültedeki seminer, atölye ve söyleşileri tek yerden takip edin.</p>
-        <h2>Yaklaşan 2 etkinlik</h2>
+        <h2>Yaklaşan 2 Etkinlik</h2>
         
-        <!-- 2 Sütunlu Kart Yapımız (Geniş ekranda yan yana, telefonda alt alta) -->
-        <section class="grid-2">
-            <article>
-                <h3>Kariyer Günleri</h3>
-                <p>12 Ekim</p>
-                <a href="etkinlik-detay.html">Detay →</a>
-            </article>
-            
-            <article>
-                <h3>Robotik Atölyesi</h3>
-                <p>20 Ekim</p>
-                <a href="etkinlik-detay.html">Detay →</a>
-            </article>
-        </section>
+        <!-- data-limit="2" ile js sadece 2 kart basacak -->
+        <section id="etkinlik-listesi" class="grid-2" data-limit="2"></section>
         
         <br>
-        <a href="etkinlikler.html">Tüm etkinlikleri gör →</a>
+        <a href="etkinlikler.html" style="background: var(--renk-ana); color: white; padding: 0.75rem 1.5rem; border-radius: var(--kose); text-decoration: none; display:inline-block; font-weight:bold;">Tüm etkinlikleri gör</a>
     </main>
-
     <footer>
         <p>Selim Aydın - 2311012055 - 2026</p>
     </footer>
-
 </body>
 </html>

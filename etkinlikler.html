@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tüm Etkinlikler</title>
-    <!-- CSS bağlantımız -->
+    <title>Kampüs Etkinlikleri</title>
     <link rel="stylesheet" href="css/2311012055.css">
+    <script type="module" src="js/event-list.js"></script>
 </head>
 <body>
-
     <header>
         <h1>Kampüs Etkinlikleri</h1>
         <nav>
@@ -16,45 +15,25 @@
                 <li><a href="index.html">Ana Sayfa</a></li>
                 <li><a href="etkinlikler.html">Etkinlikler</a></li>
                 <li><a href="etkinlik-ekle.html">Ekle</a></li>
-                <li><a href="etkinlik-guncelle.html">Güncelle</a></li>
             </ul>
         </nav>
     </header>
-
     <main>
-        <h2>Tüm Etkinlikler</h2>
+        <!-- Arama ve Kategori (Fotoğraftaki gibi alt alta ve tam genişlik) -->
+        <form id="filtre-formu" style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
+            <input type="search" id="arama" style="width:100%; padding: 0.75rem; border:1px solid #ccc; border-radius:4px; font-family: inherit;" placeholder="Etkinlik ara...">
+            <select id="kategori-filtre" style="width:100%; padding: 0.75rem; border:1px solid #ccc; border-radius:4px; font-family: inherit; color: #555;">
+                <option value="">Tüm Kategoriler</option>
+            </select>
+        </form>
         
-        <!-- 3 Sütunlu Kart Yapısı -->
-        <section class="grid-3">
-            <article>
-                <h3>Kariyer Günleri</h3>
-                <p>Seminer</p>
-                <p>12 Ekim</p>
-                <p>A Blok</p>
-                <a href="etkinlik-detay.html">Detay →</a>
-            </article>
-            
-            <article>
-                <h3>Robotik Atölyesi</h3>
-                <p>Atölye</p>
-                <p>20 Ekim</p>
-                <p>Lab 2</p>
-                <a href="etkinlik-detay.html">Detay →</a>
-            </article>
-
-            <article>
-                <h3>Siber Güvenlik</h3>
-                <p>Söyleşi</p>
-                <p>27 Ekim</p>
-                <p>B Blok</p>
-                <a href="etkinlik-detay.html">Detay →</a>
-            </article>
-        </section>
+        <p id="sonuc" style="font-size: 0.9rem; color: #555; margin-bottom: 1rem;"></p>
+        
+        <!-- Etkinlik Kartları Grid -->
+        <section id="etkinlik-listesi" class="grid-3"></section>
     </main>
-
     <footer>
         <p>Selim Aydın - 2311012055 - 2026</p>
     </footer>
-
 </body>
 </html>
