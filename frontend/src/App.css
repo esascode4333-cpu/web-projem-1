@@ -1,0 +1,196 @@
+/* GENEL AYARLAR */
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f4f5f7; 
+}
+
+#root {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ----------------------------------
+   BAŞLIK VE MENÜ (BORDO ZEMİN, BEYAZ YAZI)
+------------------------------------- */
+.site-baslik {
+  background-color: #8a1538; /* Bordo Arka Plan */
+  color: white; 
+  padding: 20px 30px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.site-baslik h1 {
+  margin: 0 0 15px 0;
+  font-size: 28px;
+  color: white; 
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+}
+
+.menu a {
+  color: white; 
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+  opacity: 1;
+}
+
+/* ----------------------------------
+   ARAMA VE FİLTRE (BEYAZ KUTU, SİYAH YAZI - KESİN ÇÖZÜM)
+------------------------------------- */
+.filtre-alani {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+/* Tarayıcı zorlamasını (dark mode vs) ezmek için !important eklendi */
+.filtre-alani input, 
+.filtre-alani select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff !important; 
+  color: #000 !important; /* Yazılar KESİNLİKLE siyah */
+  font-size: 16px;
+}
+
+/* Arama kutusundaki "Etkinlik ara..." gri yazısı */
+.filtre-alani input::placeholder {
+  color: #666 !important;
+  opacity: 1;
+}
+
+/* Kategorilerin (Dropdown) açık menü listesi */
+.filtre-alani select option {
+  color: #000 !important;
+  background-color: #fff !important;
+}
+
+.etkinlik-sayisi {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* ----------------------------------
+   ETKİNLİK KARTLARI (3 KOLON)
+------------------------------------- */
+.etkinlik-listesi {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+}
+
+.etkinlik-karti {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Yazıları ve butonu ortalar */
+  text-align: center;
+}
+
+.etkinlik-karti h3 {
+  margin: 0 0 15px 0;
+  font-size: 18px;
+  color: #222;
+}
+
+.etkinlik-karti p {
+  margin: 5px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.detay-butonu {
+  margin-top: auto; 
+  align-self: center; /* Buton tam ortada durur */
+  background-color: #8a1538; 
+  color: white;
+  border: none;
+  padding: 8px 25px;
+  border-radius: 20px; 
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.detay-butonu:hover {
+  background-color: #6a0f2b; 
+}
+
+/* ----------------------------------
+   EKLE SAYFASI FORMU (BEYAZ KUTU, SİYAH YAZI)
+------------------------------------- */
+.form-kapsayici {
+  background-color: white; 
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-satiri {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-satiri label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Form içindeki inputlar da karanlık moda yenilmesin */
+.form-satiri input, 
+.form-satiri select, 
+.form-satiri textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff !important;
+  color: #000 !important;
+  font-size: 16px;
+}
+
+/* Form Hata (Kırmızı Uyarı) Ayarları */
+.hata-mesaji {
+  color: #d32f2f; /* Uyarı Kırmızı */
+  font-size: 13px;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.input-hatali {
+  border-color: #d32f2f !important;
+  background-color: #fff8f8 !important; /* Hafif kırmızımsı beyaz arka plan */
+}
