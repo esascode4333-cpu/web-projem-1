@@ -36,14 +36,33 @@ function App() {
     localStorage.setItem("kampusEtkinlikleri", JSON.stringify(eventsList));
   }, [eventsList]);
 
+  const selectedEvent = selectedEventId ? eventsList.find(e => e.id === selectedEventId) : undefined;
+
+  // --- HOCANIN İSTEDİĞİ: TARAYICI SEKME (TAB) ADINI DİNAMİK YAPMA ---
+  useEffect(() => {
+    if (currentPage === "detail" && selectedEvent) {
+      document.title = selectedEvent.title;
+    } else {
+      document.title = "Kampüs Etkinlikleri";
+    }
+  }, [currentPage, selectedEvent]);
+
+  // Sayfa değiştirme fonksiyonu
+  const handleNavigate = (page: PageName) => {
+    setCurrentPage(page);
+    if (page !== "detail") {
+      setSelectedEventId(null);
+    }
+  };
+
   // --- SAYFAYA GÖRE DİNAMİK BAŞLIK BELİRLEME ---
   let headerTitle = "Kampüs Etkinlikleri";
   if (currentPage === "home") {
     headerTitle = "Ana Sayfa - Yaklaşan Etkinlikler";
   } else if (currentPage === "events") {
     headerTitle = "Tüm Kampüs Etkinlikleri";
-  } else if (currentPage === "detail") {
-    headerTitle = "Etkinlik Detayı";
+  } else if (currentPage === "detail" && selectedEvent) {
+    headerTitle = selectedEvent.title;
   } else if (currentPage === "add") {
     headerTitle = "Yeni Etkinlik Oluştur";
   }
@@ -58,7 +77,6 @@ function App() {
   });
 
   const upcomingEvents = eventsList.slice(0, 3);
-  const selectedEvent = selectedEventId ? eventsList.find(e => e.id === selectedEventId) : undefined;
 
   const handleDetailClick = (id: string) => {
     setSelectedEventId(id);
@@ -70,9 +88,11 @@ function App() {
       {/* Üst başlık artık hangi sayfada olduğuna göre dinamik değişiyor */}
       <Header title={headerTitle} />
 
+      {/* Navigasyon çubuğu ve seçilen etkinliğin adı */}
       <Navigation 
-        current={currentPage as any} 
-        onNavigate={setCurrentPage} 
+      current={currentPage} 
+      onNavigate={handleNavigate} 
+      selectedEventTitle={selectedEvent?.title}
       />
       
       <main>
@@ -116,7 +136,7 @@ function App() {
         {currentPage === "detail" && selectedEvent && (
           <EventDetail 
             event={selectedEvent} 
-            onBack={() => setCurrentPage("events")} 
+            onBack={() => handleNavigate("events")} 
           />
         )}
 
