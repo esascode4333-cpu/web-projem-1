@@ -193,4 +193,84 @@ body, html {
 .input-hatali {
   border-color: #d32f2f !important;
   background-color: #fff8f8 !important; /* Hafif kırmızımsı beyaz arka plan */
+}/* Etkinlik Kartı Hover Efekti */
+.etkinlik-karti {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.etkinlik-karti:hover {
+  transform: translateY(-5px); /* Kartı hafifçe yukarı kaldırır */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Gölgelendirmeyi artırır */
+}
+
+/* Form ve Detay Butonları Hover Efekti */
+.detay-butonu {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.detay-butonu:hover {
+  background-color: #6b0f2a; /* Kampüs renginin biraz daha koyusu */
+  transform: scale(1.02); /* Butonu çok hafif büyütür */
+}/* Filtreler Alanı */
+/* Filtreler Alanı */
+.filtreler input,
+.filtreler select {
+  border: 2px solid #ddd !important;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none !important; /* Tarayıcının kendi çirkin çizgisini KESİN olarak iptal eder */
+}
+
+.filtreler input:focus,
+.filtreler select:focus {
+  border-color: #8a1538 !important; /* Bizim kampüs rengimizi zorla uygular */
+  box-shadow: 0 0 8px rgba(138, 21, 56, 0.6) !important; /* Parlamayı zorla uygular ve belirginleştirir */
+}
+/* Form Hataları */
+.input-hatali {
+  border: 2px solid #e74c3c !important; /* Kırmızı kenarlık */
+  background-color: #fadbd8; /* Çok hafif kırmızı arka plan */
+}
+
+.hata-mesaji {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  display: block;
+  font-weight: 500;
+}/* --- Üst Menü (Navigation) Tasarımı --- */
+.ana-menu {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-bottom: 2px solid #f4f5f7;
+  margin-bottom: 20px;
+}
+
+.menu-butonu {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease; /* Renk geçişini yumuşatır */
+}
+
+/* Farenin ucuyla üzerine gelince */
+.menu-butonu:hover {
+  color: #8a1538;
+  background-color: #fcf0f2; /* Çok hafif, uçuk bir bordo arka plan */
+}
+
+/* Tıklanmış ve O AN AÇIK OLAN sayfanın butonu */
+.menu-butonu.aktif {
+  background-color: #8a1538; /* Kampüs rengi tam doldurur */
+  color: white; /* Yazı beyaz olur */
+  box-shadow: 0 4px 10px rgba(138, 21, 56, 0.3); /* Altına hafif bordo bir ışık saçar */
 }
