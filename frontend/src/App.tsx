@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { events as initialEvents } from "./data/events";
 import type { CampusEvent } from "./types/campus-event";
 import "./App.css";
@@ -14,11 +14,10 @@ import EventDetail from "./components/events/EventDetails";
 import EventForm from "./components/events/EventForm";
 
 function App() {
-  // --- 1. SÜREKLİ DEĞİŞEN VERİLER (STATE) ---
   const [currentPage, setCurrentPage] = useState<PageName>("home");
   const [selectedEventId, setSelectedEventId] = useState<string | null>(null);
 
-  // Adım 11: Etkinlik listesini başlatırken önce tarayıcı hafızasına (localStorage) bakıyoruz
+  // Etkinlik listesini başlatırken tarayıcı hafızasına (localStorage) bakıyoruz
   const [eventsList, setEventsList] = useState<CampusEvent[]>(() => {
     const kayitliVeri = localStorage.getItem("kampusEtkinlikleri");
     if (kayitliVeri) {
@@ -32,13 +31,24 @@ function App() {
   const [category, setCategory] = useState("Tümü");
   const categories = ["Tümü", "Seminer", "Atölye", "Söyleşi", "Yarışma"];
 
-  // --- 2. VERİLERİ KALICI YAPMA (USEEFFECT) ---
-  // eventsList her değiştiğinde (yeni etkinlik eklendiğinde) tarayıcıya kaydet
+  // Değişiklikleri otomatik kaydet (useEffect)
   useEffect(() => {
     localStorage.setItem("kampusEtkinlikleri", JSON.stringify(eventsList));
   }, [eventsList]);
 
-  // --- 3. FİLTRELEME MATEMATİĞİ ---
+  // --- SAYFAYA GÖRE DİNAMİK BAŞLIK BELİRLEME ---
+  let headerTitle = "Kampüs Etkinlikleri";
+  if (currentPage === "home") {
+    headerTitle = "Ana Sayfa - Yaklaşan Etkinlikler";
+  } else if (currentPage === "events") {
+    headerTitle = "Tüm Kampüs Etkinlikleri";
+  } else if (currentPage === "detail") {
+    headerTitle = "Etkinlik Detayı";
+  } else if (currentPage === "add") {
+    headerTitle = "Yeni Etkinlik Oluştur";
+  }
+
+  // Filtreleme Matematiği
   const filteredEvents = eventsList.filter((event) => {
     const textMatch = event.title.toLowerCase().includes(searchText.toLowerCase()) || 
                       event.description.toLowerCase().includes(searchText.toLowerCase());
@@ -50,16 +60,15 @@ function App() {
   const upcomingEvents = eventsList.slice(0, 3);
   const selectedEvent = selectedEventId ? eventsList.find(e => e.id === selectedEventId) : undefined;
 
-  // --- 4. FONKSİYONLAR ---
   const handleDetailClick = (id: string) => {
     setSelectedEventId(id);
     setCurrentPage("detail");
   };
 
-  // --- 5. GÖRÜNÜM (JSX) ---
   return (
     <>
-      <Header title="Kampüs Etkinlikleri" />
+      {/* Üst başlık artık hangi sayfada olduğuna göre dinamik değişiyor */}
+      <Header title={headerTitle} />
 
       <Navigation 
         current={currentPage as any} 

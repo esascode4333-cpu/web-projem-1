@@ -1,4 +1,4 @@
-import React from "react";
+
 import type { PageName } from "../../types/page";
 
 interface NavigationProps {
