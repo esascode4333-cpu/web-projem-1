@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -7,6 +8,9 @@ export default function LoginPage() {
   const [errors, setErrors] = useState<{email?: string, password?: string}>({});
   const [sent, setSent] = useState(false);
 
+  useEffect(() => {
+    document.title = "Giriş Yap | Kampüs Etkinlikleri";
+  }, []);
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const found: any = {};

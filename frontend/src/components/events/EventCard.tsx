@@ -8,7 +8,6 @@ interface Props {
 export default function EventCard({ event }: Props) {
   return (
     <div style={{ border: "1px solid #ddd", borderRadius: "8px", marginBottom: "15px", background: "#fff", overflow: "hidden", boxShadow: "0 2px 4px rgba(0,0,0,0.05)" }}>
-      {/* Etkinlik görseli (Eğer veri içinde image alanı varsa gösterir, yoksa varsayılan bir görsel / kutu koyar) */}
       <div style={{ width: "100%", height: "140px", background: "#eee", display: "flex", alignItems: "center", justifyContent: "center", color: "#888" }}>
         {event.image ? (
           <img src={event.image} alt={event.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
@@ -31,4 +30,4 @@ export default function EventCard({ event }: Props) {
       </div>
     </div>
   );
-}
+} 
