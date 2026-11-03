@@ -19,8 +19,7 @@ function App() {
   return (
     <>
       <Header title="Kampüs Etkinlikleri" />
-      {/* Şimdilik hata vermemesi için boş prop gönderiyoruz, sonraki adımda Navigation'ı güncelleyeceğiz */}
-      <Navigation current="home" onNavigate={() => {}} />
+      <Navigation />
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
