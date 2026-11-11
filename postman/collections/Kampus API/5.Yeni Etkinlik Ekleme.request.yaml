@@ -1,0 +1,17 @@
+$kind: http-request
+url: http://localhost:3000/events
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"title\": \"Postman Test Etkinliği\",\r
+
+    \  \"category\": \"Atölye\",\r
+
+    \  \"date\": \"2026-12-20\",\r
+
+    \  \"capacity\": 30\r
+
+    }"
+order: 5000

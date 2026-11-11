@@ -1,0 +1,136 @@
+{
+  "info": {
+    "_postman_id": "f1ff9262-12ce-473d-a78e-6baf772d9715",
+    "name": "Kampus Apı",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "60115243",
+    "_collection_link": "https://go.postman.co/collection/60115243-f1ff9262-12ce-473d-a78e-6baf772d9715?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "1.Sunucu Ayakta mı",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/health",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "health"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2.Etkinlikler",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/events",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "events"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "3.Tek Etkinlik",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/events/event-2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "events",
+            "event-2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "4. Olmayan Etkinlik (Hata Testi)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "5. Yeni Etkinlik Ekleme",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Postman Test Etkinliği\",\r\n  \"category\": \"Atölye\",\r\n  \"date\": \"2026-12-20\",\r\n  \"capacity\": 30\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/events",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "events"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "6. Eksik Veri ile Ekleme (Hata Testi)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"title\":\"Hatalı Test Etkinliği\", \"category\":\"Test\", \"date\":\"2023-12-31\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/events",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "events"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

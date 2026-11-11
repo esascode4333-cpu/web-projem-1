@@ -1,0 +1,135 @@
+/* Öğrenci No: 2311012055 */
+
+:root {
+  --no: 2311012055;
+  --ton: 335; /* Numaranıza göre hesaplanan vişne çürüğü tonu */
+  --renk-ana: hsl(var(--ton), 65%, 38%);
+  --renk-zemin: hsl(var(--ton), 30%, 97%);
+  --font: "Times New Roman", serif;
+  --bosluk-m: 1rem;
+  --kose: 8px;
+}
+
+body { 
+  font-family: var(--font); 
+  background-color: var(--renk-zemin); 
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Üst Menü Tasarımı (Görseldeki gibi kutu içinde) */
+header {
+  background-color: var(--renk-ana); /* Arka plan vişne çürüğü */
+  color: black; /* Başlık rengi siyah */
+  padding: var(--bosluk-m);
+  border-radius: var(--kose);
+  margin: var(--bosluk-m); /* Kenarlardan hafif boşluk */
+}
+
+header h1 { 
+  color: black; /* Başlık siyah */
+  margin-top: 0; 
+}
+
+nav ul { 
+  list-style: none; 
+  padding: 0; 
+  display: flex; 
+  gap: var(--bosluk-m); 
+  flex-wrap: wrap; 
+}
+
+nav a { 
+  text-decoration: none; 
+  color: black; /* Linkler siyah */
+  font-weight: bold; 
+}
+
+main { 
+  padding: var(--bosluk-m); 
+}
+
+/* Mobil Öncelikli Grid (Kart) Yapısı */
+section { 
+  display: grid; 
+  gap: var(--bosluk-m); 
+  grid-template-columns: 1fr; /* Telefonda tek sütun */
+}
+
+/* Geniş Ekranda (Bilgisayar) Grid Düzeni */
+@media (min-width: 768px) {
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .detay-grid { grid-template-columns: 1fr 2fr; }
+}
+
+/* Kart (Article) İçi Tasarımı */
+article {
+  background-color: white; /* İçi ferah beyaz */
+  border: 1px solid #ccc; /* İnce, şık gri kenarlık */
+  padding: var(--bosluk-m);
+  border-radius: var(--kose);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+article h3 {
+  margin-top: 0;
+  color: black;
+}
+
+article a {
+  text-decoration: none;
+  color: var(--renk-ana); /* Detay linkleri vişne çürüğü */
+  font-weight: bold;
+}
+
+/* Form Tasarımı */
+form { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 1rem; 
+  max-width: 400px; 
+}
+
+label { 
+  display: block; 
+  font-weight: bold; 
+  color: black;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: var(--kose);
+  box-sizing: border-box;
+  font-family: var(--font);
+}
+
+/* Zorunlu (Hatalı/Boş) Alanlar Kırmızı Çerçeve */
+input:invalid, select:invalid, textarea:invalid {
+  border: 2px solid red;
+  background-color: #ffe6e6;
+}
+
+/* Buton Tasarımı */
+button {
+  background-color: var(--renk-ana); /* Kaydet/Güncelle butonu vişne çürüğü */
+  color: white; /* Buton yazısı beyaz kalsın ki okunsun */
+  padding: 1rem;
+  border: none;
+  border-radius: var(--kose);
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  font-family: var(--font);
+  font-size: 1rem;
+}
+
+/* Görsel Tasarımı */
+img { 
+  max-width: 100%; 
+  height: auto; 
+  border-radius: var(--kose); 
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kampüs Etkinlikleri</title>
+    <link rel="stylesheet" href="css/2311012055.css">
+    <script type="module" src="js/event-list.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Kampüs Etkinlikleri</h1>
+        <p style="color:white; margin:0 0 1rem 0;">Fakültedeki seminer, atölye ve söyleşileri tek yerden takip edin.</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="etkinlikler.html">Etkinlikler</a></li>
+                <li><a href="etkinlik-ekle.html">Ekle</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Yaklaşan 2 Etkinlik</h2>
+        
+        <!-- data-limit="2" ile js sadece 2 kart basacak -->
+        <section id="etkinlik-listesi" class="grid-2" data-limit="2"></section>
+        
+        <br>
+        <a href="etkinlikler.html" style="background: var(--renk-ana); color: white; padding: 0.75rem 1.5rem; border-radius: var(--kose); text-decoration: none; display:inline-block; font-weight:bold;">Tüm etkinlikleri gör</a>
+    </main>
+    <footer>
+        <p>Selim Aydın - 2311012055 - 2026</p>
+    </footer>
+</body>
+</html>

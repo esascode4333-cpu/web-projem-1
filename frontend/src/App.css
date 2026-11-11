@@ -1,0 +1,276 @@
+/* GENEL AYARLAR */
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f4f5f7; 
+}
+
+#root {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ----------------------------------
+   BAŞLIK VE MENÜ (BORDO ZEMİN, BEYAZ YAZI)
+------------------------------------- */
+.site-baslik {
+  background-color: #8a1538; /* Bordo Arka Plan */
+  color: white; 
+  padding: 20px 30px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.site-baslik h1 {
+  margin: 0 0 15px 0;
+  font-size: 28px;
+  color: white; 
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+}
+
+.menu a {
+  color: white; 
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+  opacity: 1;
+}
+
+/* ----------------------------------
+   ARAMA VE FİLTRE (BEYAZ KUTU, SİYAH YAZI - KESİN ÇÖZÜM)
+------------------------------------- */
+.filtre-alani {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+/* Tarayıcı zorlamasını (dark mode vs) ezmek için !important eklendi */
+.filtre-alani input, 
+.filtre-alani select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff !important; 
+  color: #000 !important; /* Yazılar KESİNLİKLE siyah */
+  font-size: 16px;
+}
+
+/* Arama kutusundaki "Etkinlik ara..." gri yazısı */
+.filtre-alani input::placeholder {
+  color: #666 !important;
+  opacity: 1;
+}
+
+/* Kategorilerin (Dropdown) açık menü listesi */
+.filtre-alani select option {
+  color: #000 !important;
+  background-color: #fff !important;
+}
+
+.etkinlik-sayisi {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* ----------------------------------
+   ETKİNLİK KARTLARI (3 KOLON)
+------------------------------------- */
+.etkinlik-listesi {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+}
+
+.etkinlik-karti {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Yazıları ve butonu ortalar */
+  text-align: center;
+}
+
+.etkinlik-karti h3 {
+  margin: 0 0 15px 0;
+  font-size: 18px;
+  color: #222;
+}
+
+.etkinlik-karti p {
+  margin: 5px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.detay-butonu {
+  margin-top: auto; 
+  align-self: center; /* Buton tam ortada durur */
+  background-color: #8a1538; 
+  color: white;
+  border: none;
+  padding: 8px 25px;
+  border-radius: 20px; 
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.detay-butonu:hover {
+  background-color: #6a0f2b; 
+}
+
+/* ----------------------------------
+   EKLE SAYFASI FORMU (BEYAZ KUTU, SİYAH YAZI)
+------------------------------------- */
+.form-kapsayici {
+  background-color: white; 
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-satiri {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-satiri label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Form içindeki inputlar da karanlık moda yenilmesin */
+.form-satiri input, 
+.form-satiri select, 
+.form-satiri textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff !important;
+  color: #000 !important;
+  font-size: 16px;
+}
+
+/* Form Hata (Kırmızı Uyarı) Ayarları */
+.hata-mesaji {
+  color: #d32f2f; /* Uyarı Kırmızı */
+  font-size: 13px;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.input-hatali {
+  border-color: #d32f2f !important;
+  background-color: #fff8f8 !important; /* Hafif kırmızımsı beyaz arka plan */
+}/* Etkinlik Kartı Hover Efekti */
+.etkinlik-karti {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.etkinlik-karti:hover {
+  transform: translateY(-5px); /* Kartı hafifçe yukarı kaldırır */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Gölgelendirmeyi artırır */
+}
+
+/* Form ve Detay Butonları Hover Efekti */
+.detay-butonu {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.detay-butonu:hover {
+  background-color: #6b0f2a; /* Kampüs renginin biraz daha koyusu */
+  transform: scale(1.02); /* Butonu çok hafif büyütür */
+}/* Filtreler Alanı */
+/* Filtreler Alanı */
+.filtreler input,
+.filtreler select {
+  border: 2px solid #ddd !important;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none !important; /* Tarayıcının kendi çirkin çizgisini KESİN olarak iptal eder */
+}
+
+.filtreler input:focus,
+.filtreler select:focus {
+  border-color: #8a1538 !important; /* Bizim kampüs rengimizi zorla uygular */
+  box-shadow: 0 0 8px rgba(138, 21, 56, 0.6) !important; /* Parlamayı zorla uygular ve belirginleştirir */
+}
+/* Form Hataları */
+.input-hatali {
+  border: 2px solid #e74c3c !important; /* Kırmızı kenarlık */
+  background-color: #fadbd8; /* Çok hafif kırmızı arka plan */
+}
+
+.hata-mesaji {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  display: block;
+  font-weight: 500;
+}/* --- Üst Menü (Navigation) Tasarımı --- */
+.ana-menu {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-bottom: 2px solid #f4f5f7;
+  margin-bottom: 20px;
+}
+
+.menu-butonu {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease; /* Renk geçişini yumuşatır */
+}
+
+/* Farenin ucuyla üzerine gelince */
+.menu-butonu:hover {
+  color: #8a1538;
+  background-color: #fcf0f2; /* Çok hafif, uçuk bir bordo arka plan */
+}
+
+/* Tıklanmış ve O AN AÇIK OLAN sayfanın butonu */
+.menu-butonu.aktif {
+  background-color: #8a1538; /* Kampüs rengi tam doldurur */
+  color: white; /* Yazı beyaz olur */
+  box-shadow: 0 4px 10px rgba(138, 21, 56, 0.3); /* Altına hafif bordo bir ışık saçar */
+}
